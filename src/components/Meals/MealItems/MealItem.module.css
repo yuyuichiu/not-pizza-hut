@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+
+.mealItem {
+  font-family: 'Roboto';
+  position: relative;
+  height: 334px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  margin: 15px 10px;
+  width: calc(25% - 20px);
+}
+
+.mealItem img {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.mealItem h3{
+  margin: 5px 0 0 7px;
+  font-size: 20px;
+}
+
+.mealItem p{
+  margin: 3px 0 0 7px;
+  color: #555;
+}
+
+@media  (max-width: 770px) and (max-width: 1139px) {
+  .mealItem{
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 1140px) {
+  .mealItem{
+    width: calc(50% - 20px);
+    margin: 10px;
+  }
+}
+
+/* 770, 1140 */

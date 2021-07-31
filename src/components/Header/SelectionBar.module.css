@@ -1,0 +1,27 @@
+.bar {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  min-height: 70px;
+  width: calc(100vw - 420px + 98px);
+  box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 770px) and (max-width: 1139px) {
+  .bar{
+    width: 100%;
+    padding: 5px;
+    display: none;
+  }
+}
+
+@media (max-width: 1140px) {
+  .bar{
+    width: calc(100vw - 350px);
+    padding: 0 10px;
+    justify-content: flex-start;
+  }
+}

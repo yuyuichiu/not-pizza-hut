@@ -1,0 +1,42 @@
+.header {
+  background-color: #fff;
+  width: calc(100vw - 420px);
+  height: 70px;
+  padding: 0 50px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header img {
+  height: 35px;
+  object-fit: cover;
+}
+
+.header span {
+  margin: 0 7px;
+  font-size: 12px;
+}
+
+.header small {
+  cursor: pointer;
+}
+
+.header__toolbox{
+  float: right;
+  height: 30px;
+}
+
+@media (max-width: 1140px) {
+  .header{
+    width: calc(100vw - 350px);
+    padding: 10px;
+  }
+}
+
+@media (max-width: 770px) and (max-width: 1139px) {
+  .header{
+    width: calc(100% - 5px);
+    padding: 5px;
+  }
+}

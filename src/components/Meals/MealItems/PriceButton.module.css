@@ -1,0 +1,30 @@
+.priceBtn {
+  position: absolute;
+  font-family: inherit;
+  bottom: 0;
+  width: calc(100% - 14px);
+  padding: 3px 10px;
+  text-align: right;
+  color: #fff;
+  font-weight: 700;
+  margin: 7px;
+  border: 1px solid #70a401;
+  border-radius: 5px;
+  background-color: #70a401;
+  cursor: pointer;
+}
+
+.priceBtn:hover {
+  background-color: #fff;
+  color: #555;
+  border: 1px solid #ddd;
+  box-shadow: none;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}

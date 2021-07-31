@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap');
+
+.sectionBtn {
+  width: auto;
+  height: 71px;
+  border: none;
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 8px;
+}
+
+.sectionBtn p{
+  font-family: 'Lora', serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.sectionBtn.active {
+  background-color: rgb(243, 60, 60);
+  color: #fff;
+}
+
+.sectionBtn.active img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+.sectionBtn:hover {
+  background-color: rgb(243, 60, 60);
+  color: #fff;
+}
+
+.sectionBtn:hover img {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+@media (max-width: 1140px) {
+  .sectionBtn {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .sectionBtn p{
+    font-size: 14px;
+  }
+
+  .sectionBtn img{
+    width: 30px;
+    height: 30px;
+  }
+}

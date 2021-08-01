@@ -22,13 +22,20 @@ const Sections = [
   // { id: 7, logo: alacarteLogo, title: '?' },
 ]
 
+
 const SelectionBar = (props) => {
+  const sectionChangeHandler = (target) => {
+    props.onSectionChange(target);
+  }
+
   return <div className={styles.bar}>
     {Sections.map((i) => <SectionButton
       key={i.id}
       logo={i.logo}
-      active={props.active}
-      title={i.title}/>)}
+      active={props.activeSection}
+      title={i.title}
+      onClick={() => sectionChangeHandler(i.title.toUpperCase())}/>
+    )}
   </div>
 }
 

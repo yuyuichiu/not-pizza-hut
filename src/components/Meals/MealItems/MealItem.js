@@ -1,16 +1,28 @@
 import React from 'react';
 
 import styles from './MealItem.module.css'
-import testPic from '../../../assets/pizza.jpg'
 import PriceButton from './PriceButton';
 
+// Props: meal (with id, image, title, description and price)
 const MealItem = (props) => {
-  return <div className={styles.mealItem}>
-    <img src={testPic} alt="food title"></img>
-    <h3>Food Title</h3>
-    <p>description of the product, some dummy words to test stuff</p>
+  const addCartItemHandler = () => {
+    let newItem = {
+      id: props.meal.id,
+      title: props.meal.title,
+      price: props.meal.price,
+      amount: 1
+    }
+    console.log(newItem);
+  }
 
-    <PriceButton price={12}/>
+  return <div className={styles.mealItem}>
+    <div className={styles.background}>
+      <img src={process.env.PUBLIC_URL + props.meal.image} alt={props.meal.title}></img>
+    </div>
+    <h3>{props.meal.title}</h3>
+    <p>{props.meal.description}</p>
+
+    <PriceButton price={props.meal.price} onClick={addCartItemHandler}/>
   </div>
 }
 

@@ -5,16 +5,21 @@ import './App.css';
 import Cart from './components/Cart/Cart';
 import SelectionBar from './components/Header/SelectionBar';
 import Meals from './components/Meals/Meals';
+import CartProvider from './store/CartProvider';
 
 function App() {
-  const [section, setSection] = useState('pizza')
+  const [section, setSection] = useState('PIZZA');
 
-  return (<>
+  const sectionChangeHandler = (i) => {
+    setSection(i)
+  }
+
+  return (<CartProvider>
     <Header />
     <Cart />
-    <SelectionBar active={section}/>
-    <Meals />
-  </>);
+    <SelectionBar activeSection={section} onSectionChange={sectionChangeHandler}/>
+    <Meals activeSection={section}/>
+  </CartProvider>);
 }
 
 export default App;

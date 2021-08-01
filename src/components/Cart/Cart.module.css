@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+.btn{
+  width: 80%;
+}
+
+.altBtn{
+  background-color: rgb(250, 250, 250);
+  border: 1px solid #ddd;
+  color: #555;
+  width: 80%;
+}
+
 .cart {
   background-color: #fff;
   position: fixed;

@@ -21,7 +21,7 @@
 }
 
 .sectionBtn.active {
-  background-color: rgb(243, 60, 60);
+  background-color: rgb(255, 81, 81);
   color: #fff;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .sectionBtn:hover {
-  background-color: rgb(243, 60, 60);
+  background-color: rgb(255, 81, 81);
   color: #fff;
 }
 

@@ -9,21 +9,38 @@
   background-color: #fff;
   margin: 15px 10px;
   width: calc(25% - 20px);
+  animation: floatIn 0.5s ease-out forwards;
+}
+
+@keyframes floatIn {
+  0% {
+    transform: translateY(75px);
+    opacity: 0;
+  } to {
+    transform: translateY(0);
+  }
+}
+
+.background {
+  background-image: url(../../../assets/food_bg.png);
+  min-height: 50%;
 }
 
 .mealItem img {
   height: 50%;
   width: 100%;
+  min-width: 200px;
   object-fit: cover;
 }
 
 .mealItem h3{
   margin: 5px 0 0 7px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .mealItem p{
   margin: 3px 0 0 7px;
+  font-size: 14px;
   color: #555;
 }
 
@@ -39,5 +56,3 @@
     margin: 10px;
   }
 }
-
-/* 770, 1140 */

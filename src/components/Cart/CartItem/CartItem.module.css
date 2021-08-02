@@ -14,6 +14,7 @@
 }
 
 .left p {
+  font-size: 14px;
   font-weight: bold;
   margin: 0;
   text-transform: capitalize;
@@ -32,6 +33,7 @@
 }
 
 .right p {
+  font-size: 14px;
   font-weight: bold;
   margin: 0;
 }
@@ -45,6 +47,6 @@
 .removeBtn {
   background-color: #666;
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   transform: translateY(-15%);
 }

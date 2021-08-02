@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+@font-face {
+  font-family: "UnitedSans";
+  src: url('../../assets/united-sans-reg/UnitedSansReg-Bold.otf');
+}
+
 .btn{
   width: 80%;
 }
@@ -27,7 +32,6 @@
 
 .cartTitle {
   position: relative;
-  font-family: 'Roboto';
 }
 
 .cartTitle::before {
@@ -48,6 +52,12 @@
   width: 70px;
   height: 1px;
   background-color: rgb(143, 143, 143);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 @media (max-width: 770px) and (max-width: 1139px) {

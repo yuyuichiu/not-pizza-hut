@@ -1,29 +1,44 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import AmountButton from '../../UI/AmountButton';
+import CartContext from '../../../store/cart-context';
 
 import styles from './CartItem.module.css'
 
-const cartCtx = {
-  id: 'TEST_1',
-  title: 'TEST ITEM',
-  price: 12.5,
-  amount: 2,
-}
-
 export default function CartItem(props) {
+  const cartCtx = useContext(CartContext);
+
+  const addItemHandler = () => {
+    cartCtx.addCartItem(props.meal);
+  }
+
+  const reduceItemHandler = () => {
+    cartCtx.reduceCartItem(props.meal);
+  }
+
+  const removeItemHandler = () => {
+    cartCtx.removeCartItem(props.meal);
+  }
+
+
   return <div className={styles.cartItem}>
     <div className={styles.left}>
-      <p>{cartCtx.title.toLowerCase() + ' * ' + cartCtx.amount}</p>
+      <p>{props.meal.title.toLowerCase() + ' * ' + props.meal.amount}</p>
       <div className={styles.amountControl}>
-        <AmountButton>-</AmountButton>
-        <div>{cartCtx.amount}</div>
-        <AmountButton className={styles.altBtn}>+</AmountButton>
+        <AmountButton onClick={reduceItemHandler}>
+          -
+        </AmountButton>
+        <div>{props.meal.amount}</div>
+        <AmountButton onClick={addItemHandler} className={styles.altBtn}>
+          +
+        </AmountButton>
       </div>
     </div>
 
     <div className={styles.right}>
-      <p>{`HK$${(cartCtx.price * cartCtx.amount).toFixed(2)}`}</p>
-      <AmountButton className={styles.removeBtn}>X</AmountButton>
+      <p>{`HK$${(props.meal.price * props.meal.amount).toFixed(2)}`}</p>
+      <AmountButton  onClick={removeItemHandler} className={styles.removeBtn}>
+        X
+      </AmountButton>
     </div>
   </div>
 }

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "UnitedSans";
+  src: url('assets/united-sans-reg/UnitedSansReg-Black.otf') format("woff");
+}
+
 body {
   background-color: #eee;
   background-image: url('./assets/marble_bg.jpg');
@@ -5,6 +10,7 @@ body {
   background-size: cover;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-family: 'UnitedSans';
 }
 
 ::selection {

@@ -9,6 +9,10 @@ const MealItem = (props) => {
   const cartCtx = useContext(CartContext);
   
   const addCartItemHandler = () => {
+    if(props.meal.id.startsWith('PIZZA') || props.meal.id.startsWith('COMBO')){
+      props.onModalOpen(props.meal);
+      return;
+    }
     cartCtx.addCartItem({
       id: props.meal.id,
       title: props.meal.title,
@@ -17,14 +21,18 @@ const MealItem = (props) => {
     })
   }
 
-  return <div className={styles.mealItem}>
-    <div className={styles.background}>
-      <img src={process.env.PUBLIC_URL + props.meal.image} alt={props.meal.title}></img>
-    </div>
-    <h3>{props.meal.title}</h3>
-    <p>{props.meal.description}</p>
+  return <div className={`${styles.mealItem} ${props.large && styles.large}`}>
+    <div className={styles.inner} >
+      <div className={styles.background}>
+        <img src={process.env.PUBLIC_URL + props.meal.image} alt={props.meal.title}></img>
+      </div>
+      <div className={styles.meta}>
+        <h3>{props.meal.title}</h3>
+        <p>{props.meal.description}</p>
+      </div>
 
-    <PriceButton price={props.meal.price} onClick={addCartItemHandler}/>
+      <PriceButton id={props.meal.id} price={props.meal.price} onClick={addCartItemHandler}/>
+    </div>
   </div>
 }
 

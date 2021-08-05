@@ -1,0 +1,9 @@
+.msg {
+  display: flex;
+  margin-top: 2vh;
+  position: fixed;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 70%;
+  min-height: 95vh;
+}

@@ -14,17 +14,20 @@
 }
 
 .header span {
-  margin: 0 7px;
   font-size: 12px;
 }
 
 .header small {
+  position: relative;
+  font-size: 12px;
   cursor: pointer;
+  color: #666;
 }
 
 .header__toolbox{
-  float: right;
-  height: 30px;
+  display: flex;
+  gap: 10px;
+  font-family: inherit;
 }
 
 @media (max-width: 1140px) {
@@ -38,5 +41,9 @@
   .header{
     width: calc(100% - 5px);
     padding: 5px;
+  }
+
+  .header__toolbox{
+    display: none;
   }
 }

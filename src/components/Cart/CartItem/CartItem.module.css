@@ -29,6 +29,8 @@
 
 .right {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   gap: 5px;
 }
 
@@ -49,4 +51,10 @@
   color: #fff;
   font-size: 13px;
   transform: translateY(-15%);
+}
+
+.pref li{
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0px;
 }

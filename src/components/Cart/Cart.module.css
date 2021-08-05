@@ -60,6 +60,31 @@ ul {
   list-style-type: none;
 }
 
+.cartItemContainer {
+  width: calc(100% - 10px);
+  max-height: 60%;
+  margin: 0 10px;
+  overflow-y: auto;
+}
+
+.cartAmount {
+  width: calc(100% - 10px);
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cartAmount h3 {
+  margin: 7px 0;
+}
+
+.request {
+  width: 90%;
+  height: 40px;
+  overflow-y: auto;
+}
+
 @media (max-width: 770px) and (max-width: 1139px) {
   .cart{
     display: none;

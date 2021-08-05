@@ -10,11 +10,8 @@ const Header = (props) => {
     
     <div className={styles['header__toolbox']}>
       <small><FaUserCircle /> Login/Create your account</small>
-      <span>|</span>
-      <small><FaMapMarkerAlt /> Ordering for:</small>
-      <span>|</span>
+      <small><FaMapMarkerAlt /> Ordering for Pick up from: _</small>
       <small><FaClock /> Time: ASAP</small>
-      <span>|</span>
       <small>中文</small>
     </div>
   </header>

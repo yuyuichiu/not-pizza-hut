@@ -5,7 +5,91 @@ import styles from "./Meals.module.css";
 import MealItem from "./MealItems/MealItem";
 
 // List of products, separated by category
-const mealList = [
+const mealList = [{
+  category: "COMBO",
+    items: [
+      {
+        id: "COMBO_1",
+        title: "COMBO FOR 2",
+        price: 158,
+        description: `Selected Regular Hand Crafted Pizza / Pan Pizza / Thin'N Crispy Pizza X 1
+        Selected Pasta / Rice/ Starter x 1
+        Pepsi (can) X 2`,
+        image: '/pizza_product/COMBO_01.png'
+      },
+      {
+        id: "COMBO_2",
+        title: "BIG COMBO FOR 2",
+        price: 238,
+        description: `Selected Large Hand Crafted Pizza / Pan Pizza / Thin'N Crispy Pizza X 1
+        Selected Rice / Pasta X1
+        Seleted Starter X 1
+        Pepsi (can) X 2`,
+        image: '/pizza_product/COMBO_02.png'
+      },
+      {
+        id: "COMBO_3",
+        title: "COMBO FOR 4",
+        price: 378,
+        description: `Selected Large Hand Crafted Pizza / Pan Pizza / Thin'N Crispy Pizza X 1
+        Selected Rice / Pasta X 3
+        Selected Starter X 1
+        Pepsi (can) X 4`,
+        image: '/pizza_product/COMBO_03.png'
+      },
+      {
+        id: "COMBO_4",
+        title: "COMBO FOR 6",
+        price: 538,
+        description: `Selected Large Hand Crafted Pizza / Pan Pizza / Thin'N Crispy Pizza X 2
+        Selected Rice / Pasta X 2
+        Selected Starter X 2
+        Pepsi (can) X 6`,
+        image: '/pizza_product/COMBO_04.png'
+      },
+      {
+        id: "COMBO_5",
+        title: "DOUBLE DEAL LARGE PIZZA",
+        price: 298,
+        description: `Choose any 2 Pan Pizza or Thin’N Crispy Pizza or Hand Crafted Pizza:
+        (Offer is not applicable to Newly Promoted Pizza, Seafood Supreme, Half and Half and Create Your Own Pizza)`,
+        image: '/pizza_product/COMBO_05.png'
+      },
+      {
+        id: "COMBO_6",
+        title: "HALF AND HALF - REGULAR PAN PIZZA",
+        price: 168,
+        description: `Choose 2 flavors in 1 pizza (except Newly Promoted Pizza)`,
+        image: '/pizza_product/COMBO_06.png'
+      },
+      {
+        id: "COMBO_7",
+        title: "HALF AND HALF - OATMEAL REGULAR PIZZA",
+        price: 168,
+        description: `Choose 2 flavors in 1 pizza (except Newly Promoted Pizza)`,
+        image: '/pizza_product/COMBO_07.png'
+      },
+      {
+        id: "COMBO_8",
+        title: "HALF AND HALF - REGULAR STUFFED CRUST PIZZA",
+        price: 168,
+        description: `Choose 2 flavors in 1 pizza (except Newly Promoted Pizza)`,
+        image: '/pizza_product/COMBO_08.png'
+      },
+    ]
+  },
+  {
+  category: "MY BOX",
+    items: [
+      {
+        id: "BOX_1",
+        title: "",
+        price: 134,
+        description: "",
+        image: '/pizza_product/BOX_01.png'
+      },
+    ]
+  },
   {
     category: "PIZZA",
     items: [
@@ -292,6 +376,10 @@ const filteredMeals = (criteria) => {
 }
 
 export default function Meals(props) {
+  const modalOpenHandler = (item) => {
+    props.onModalOpen(item);
+  }
+
   return (
     <div className={styles.meals}>
       <div className={styles.intro}>
@@ -301,8 +389,10 @@ export default function Meals(props) {
 
       <div className={styles.mealList}>
         {/* Show menu based on active section */}
+        {props.activeSection === 'COMBO' && 
+          filteredMeals('COMBO').map(x => <MealItem key={x.id} meal={x} onModalOpen={modalOpenHandler} large="true"/>)}
         {props.activeSection === 'PIZZA' && 
-          filteredMeals('PIZZA').map(x => <MealItem key={x.id} meal={x}/>)}
+          filteredMeals('PIZZA').map(x => <MealItem key={x.id} meal={x} onModalOpen={modalOpenHandler}/>)}
         {props.activeSection === 'PASTA & RICE' && 
           filteredMeals('PASTA & RICE').map(x => <MealItem key={x.id} meal={x}/>)}
         {props.activeSection === 'STARTER' && 

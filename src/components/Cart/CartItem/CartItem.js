@@ -23,6 +23,9 @@ export default function CartItem(props) {
   return <div className={styles.cartItem}>
     <div className={styles.left}>
       <p>{props.meal.title.toLowerCase() + ' * ' + props.meal.amount}</p>
+      <ul className={styles.pref}>
+        {props.meal.preferences && props.meal.preferences.map(x => <li key={x}>{x}</li>)}
+      </ul>
       <div className={styles.amountControl}>
         <AmountButton onClick={reduceItemHandler}>
           -

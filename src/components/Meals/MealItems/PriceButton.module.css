@@ -1,7 +1,7 @@
 .priceBtn {
-  position: absolute;
+  margin: 0 auto;
+  align-self: flex-end;
   font-family: inherit;
-  bottom: 0;
   width: calc(100% - 14px);
   padding: 3px 10px;
   text-align: right;

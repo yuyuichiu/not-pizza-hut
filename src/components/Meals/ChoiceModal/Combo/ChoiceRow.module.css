@@ -1,0 +1,41 @@
+
+.category {
+  height: 60px;
+  overflow: hidden;
+  margin: 20px 10px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+}
+
+.category.open {
+  height: auto;
+}
+
+.deal-option-header {
+  height: 60px;
+  overflow: hidden;
+  padding: 0 15px;
+  font-family: inherit;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deal-option-header button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.deal-product-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px 10px;
+}
+
+.deal-product-item {
+  flex: 0 1 25%;
+  height: 100px;
+  background-color: khaki;
+}

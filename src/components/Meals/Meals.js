@@ -5,7 +5,7 @@ import styles from "./Meals.module.css";
 import MealItem from "./MealItems/MealItem";
 
 // List of products, separated by category
-const mealList = [{
+export const mealList = [{
   category: "COMBO",
     items: [
       {
@@ -15,6 +15,12 @@ const mealList = [{
         description: `Selected Regular Hand Crafted Pizza / Pan Pizza / Thin'N Crispy Pizza X 1
         Selected Pasta / Rice/ Starter x 1
         Pepsi (can) X 2`,
+        category: [{'pizza': 2}, {'pasta / rice / starter': 1}, {'drink': 2}],
+        categoryProductsId: [
+          ['PIZZA_1','PIZZA_2','PIZZA_4'],
+          ['PASTA_1','PASTA_3','PASTA_5','STARTER_1'],
+          ['DRINK_1','DRINK_2']
+        ],
         image: '/pizza_product/COMBO_01.png'
       },
       {
@@ -377,7 +383,7 @@ const filteredMeals = (criteria) => {
 
 export default function Meals(props) {
   const modalOpenHandler = (item) => {
-    props.onModalOpen(item);
+    props.onModalOpen(item, mealList);
   }
 
   return (

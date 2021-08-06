@@ -1,0 +1,24 @@
+.msg {
+  margin-top: 2vh;
+  position: fixed;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 70%;
+  min-height: 95vh;
+}
+
+.header {
+  background-color: khaki;
+  height: 60px;
+}
+
+.header img {
+  width: 100%;
+  height: 200px;
+  vertical-align: middle;
+}
+
+.container {
+  height: 80vh;
+  overflow-y: scroll;
+}

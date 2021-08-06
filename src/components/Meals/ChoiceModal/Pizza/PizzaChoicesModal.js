@@ -1,8 +1,8 @@
 /* Panel to request user what type of pizza they want */
 import React from 'react';
 
-import CartContext from '../../store/cart-context';
-import Modal from '../UI/Modal';
+import CartContext from '../../../../store/cart-context';
+import Modal from '../../../UI/Modal';
 import styles from './PizzaChoicesModal.module.css'
 
 // Define pizza sub-options

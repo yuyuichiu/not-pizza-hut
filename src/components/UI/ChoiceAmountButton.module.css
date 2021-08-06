@@ -1,0 +1,19 @@
+.btn{
+  margin: 5px;
+  padding: 3px 7px;
+  background-color: #7ab300;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn.active{
+  
+}
+
+.btn:disabled {
+  background-color: #6d6d6d;
+
+}

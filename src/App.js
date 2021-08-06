@@ -6,8 +6,8 @@ import Cart from './components/Cart/Cart';
 import SelectionBar from './components/Header/SelectionBar';
 import Meals from './components/Meals/Meals';
 import CartProvider from './store/CartProvider';
-import PizzaChoicesModal from './components/Meals/PizzaChoicesModal';
-import ComboChoicesModal from './components/Meals/ComboChoicesModal';
+import PizzaChoicesModal from './components/Meals/ChoiceModal/Pizza/PizzaChoicesModal';
+import ComboChoicesModal from './components/Meals/ChoiceModal/Combo/ComboChoicesModal';
 
 function App() {
   const [section, setSection] = useState('COMBO');

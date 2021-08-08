@@ -58,3 +58,8 @@
   color: #666;
   margin: 5px 0px;
 }
+
+.comboChoice {
+  text-transform: capitalize;
+  padding-left: 10px;
+}

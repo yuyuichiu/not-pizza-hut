@@ -16,12 +16,9 @@ const cartReducer = (prevState, action) => {
     let newPrice = prevState.totalPrice + action.item.price;
 
     if(foundIdx > -1) {
-      // Prevent any order size larger than 20.
       if(newCartItem[foundIdx].amount >= 20){ return prevState }
-      // Update the item amount when amount is valid
       newCartItem[foundIdx].amount++;
     } else {
-      // Upload a new item to the cart context
       newCartItem = newCartItem.concat(action.item);
     }
 

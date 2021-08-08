@@ -15,7 +15,7 @@ export const mealList = [{
         description: `Selected Regular Hand Crafted Pizza / Pan Pizza / Thin'N Crispy Pizza X 1
         Selected Pasta / Rice/ Starter x 1
         Pepsi (can) X 2`,
-        category: [{'pizza': 2}, {'pasta / rice / starter': 1}, {'drink': 2}],
+        category: [{title: 'pizza', amountReq: 3}, {title: 'pasta / rice / starter', amountReq: 2}, {title: 'drink', amountReq: 2}],
         categoryProductsId: [
           ['PIZZA_1','PIZZA_2','PIZZA_4'],
           ['PASTA_1','PASTA_3','PASTA_5','STARTER_1'],
@@ -396,7 +396,7 @@ export default function Meals(props) {
       <div className={styles.mealList}>
         {/* Show menu based on active section */}
         {props.activeSection === 'COMBO' && 
-          filteredMeals('COMBO').map(x => <MealItem key={x.id} meal={x} onModalOpen={modalOpenHandler} large="true"/>)}
+          filteredMeals('COMBO').map(x => <MealItem key={'Combo' + x.id} meal={x} onModalOpen={modalOpenHandler} large="true"/>)}
         {props.activeSection === 'PIZZA' && 
           filteredMeals('PIZZA').map(x => <MealItem key={x.id} meal={x} onModalOpen={modalOpenHandler}/>)}
         {props.activeSection === 'PASTA & RICE' && 

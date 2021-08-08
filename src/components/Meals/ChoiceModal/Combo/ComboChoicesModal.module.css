@@ -5,6 +5,9 @@
   border-radius: 10px;
   width: 70%;
   min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header {
@@ -21,4 +24,8 @@
 .container {
   height: 80vh;
   overflow-y: scroll;
+}
+
+.submitBtn {
+  padding: 5px 20px;
 }

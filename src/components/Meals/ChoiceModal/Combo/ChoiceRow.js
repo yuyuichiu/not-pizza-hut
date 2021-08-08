@@ -11,22 +11,41 @@ import styles from "./ChoiceRow.module.css";
 */
 export default function ChoiceRow(props) {
   const [isOpen, setIsOpen] = useState(props.isOpen);
+  // The active amount changed based on selection, preventing amount buttons higher than this value to prevent exceeding values
+  const [activeAmt, setActiveAmount] = useState(props.category.amountReq);
 
   const triggerOpenHandler = () => {
     setIsOpen(!isOpen);
-  }
+  };
+
+  const activeAmountEditHandler = (editAmt, productId) => {
+    props.onRowAmountChange(-editAmt, props.category.title, productId)
+    setActiveAmount((prevState) => {return prevState + editAmt});
+  };
 
   return (
-    <div className={`${styles.category} ${isOpen ? styles.open : ''}`}>
+    <div className={`${styles.category} ${isOpen ? styles.open : ""}`}>
       <div className={styles["deal-option-header"]}>
-        <p>{Object.keys(props.category)[0].toUpperCase()} X {Object.values(props.category)[0]}</p>
+        <p>
+          {props.category.title.toUpperCase()} X{" "}
+          {props.category.amountReq}
+        </p>
         <button onClick={triggerOpenHandler}>
           {isOpen ? <AiOutlineUpCircle /> : <AiOutlineDownCircle />}
         </button>
       </div>
 
       <div className={styles["deal-product-list"]}>
-        {props.options && props.options.map(x => <ChoiceItem meal={x} amountReq={Object.values(props.category)[0]}/>)}
+        {props.options &&
+          props.options.map((product) => (
+            <ChoiceItem
+              key={product.id}
+              meal={product}
+              amountReq={props.category.amountReq}
+              activeAmt={activeAmt}
+              onRowAmountChange={activeAmountEditHandler}
+            />
+          ))}
       </div>
     </div>
   );

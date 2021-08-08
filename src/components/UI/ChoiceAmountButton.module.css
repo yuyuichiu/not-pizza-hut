@@ -2,18 +2,22 @@
   margin: 5px;
   padding: 3px 7px;
   background-color: #7ab300;
-  border: none;
+  border: 1px solid #7ab300;
   border-radius: 5px;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
+  transition: all linear 0.15s;
+}
+
+.btn.disabled {
+  background-color: #cacaca;
+  border: 1px solid #cacaca;
+  color: #eee;
 }
 
 .btn.active{
-  
-}
-
-.btn:disabled {
-  background-color: #6d6d6d;
-
+  background-color: #fff;
+  border: 1px solid #7ab300;
+  color: #7ab300;
 }

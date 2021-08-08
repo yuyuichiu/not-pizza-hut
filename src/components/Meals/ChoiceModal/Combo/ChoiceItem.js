@@ -1,43 +1,54 @@
-import React, { useContext } from 'react';
-import ChoiceAmountButton from '../../../UI/ChoiceAmountButton';
+import React, { useState } from "react";
+import ChoiceAmountButton from "../../../UI/ChoiceAmountButton";
 
-import styles from './ChoiceItem.module.css'
-// import CartContext from '../../../../store/cart-context';
+import styles from "./ChoiceItem.module.css";
 
 /*
   Props:
   1) meal: Information of our item (Object - id, image, title, description and price)
   2) amountReq: The amount of items required, determines different button behaviour
+  3) activeAmt: The amount maximum available to be chosen
 */
-const ChoiceItem = (props) => {
-  return <div className={`${styles.mealItem} ${props.large && styles.large}`}>
-    <div className={styles.inner} >
-      <div className={styles.background}>
-        <img src={process.env.PUBLIC_URL + props.meal.image} alt={props.meal.title}></img>
-      </div>
-      <div className={styles.meta}>
-        <h3>{props.meal.title}</h3>
-        <p>{props.meal.description}</p>
-      </div>
+export default function ChoiceItem(props) {
+  let AmountButtonToRender = [];
+  for (let i = 1; i <= props.amountReq; i++) {
+    AmountButtonToRender.push(i);
+  }
 
-      <ChoiceAmountButton amount={3}/>
+  const [amountChosen, editAmount] = useState(0);
+
+  const amountSelectHandler = (newAmount) => {
+    editAmount((prevState) => {
+      let amountToChange = newAmount === prevState ? +prevState : prevState - newAmount;
+      props.onRowAmountChange(amountToChange, props.meal.id);
+      return newAmount === prevState ? 0 : newAmount;
+    });
+  };
+
+  return (
+    <div className={`${styles.mealItem} ${props.large && styles.large}`}>
+      <div className={styles.inner}>
+        <div className={styles.background}>
+          <img
+            src={process.env.PUBLIC_URL + props.meal.image}
+            alt={props.meal.title}
+          ></img>
+        </div>
+        <div className={styles.meta}>
+          <h3>{props.meal.title}</h3>
+          <p>{props.meal.description}</p>
+        </div>
+
+        {AmountButtonToRender.map((amt) => (
+          <ChoiceAmountButton
+            key={props.meal.id + amt}
+            amount={amt}
+            selected={amountChosen}
+            activeAmt={props.activeAmt}
+            onSelection={amountSelectHandler}
+          />
+        ))}
+      </div>
     </div>
-  </div>
+  );
 }
-
-export default ChoiceItem
-
-// const cartCtx = useContext(CartContext);
-
-// const addCartItemHandler = () => {
-//   if(props.meal.id.startsWith('PIZZA') || props.meal.id.startsWith('COMBO')){
-//     props.onModalOpen(props.meal);
-//     return;
-//   }
-//   cartCtx.addCartItem({
-//     id: props.meal.id,
-//     title: props.meal.title,
-//     price: props.meal.price,
-//     amount: 1
-//   })
-// }

@@ -19,8 +19,8 @@
 .cart {
   background-color: #fff;
   position: fixed;
-  right: 0;
   top: 0;
+  right: 0;
   height: 100vh;
   width: 300px;
   padding: 20px 0;
@@ -85,8 +85,44 @@ ul {
   overflow-y: auto;
 }
 
-@media (max-width: 770px) and (max-width: 1139px) {
+.mobileMenuToggle {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid rgb(160, 26, 26);
+  background-color: rgb(214, 42, 42);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  font-size: 24px;
+  color: #fff;
+}
+
+.mobileMenuToggle:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 770px) {
   .cart{
-    display: none;
+    z-index: 12;
+    width: 100%;
+    bottom: 0;
+    top: initial;
+    right: initial;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .cart.mobile-open {
+    height: 100%;
+  }
+
+  .mobileMenuToggle {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

@@ -1,13 +1,15 @@
-
 .category {
-  height: 60px;
+  height: auto;
+  max-height: 60px;
   overflow: hidden;
   margin: 20px 10px;
   box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
 .category.open {
-  height: auto;
+  max-height: 5000px;
+  transition: max-height 1s ease-in-out;;
 }
 
 .deal-option-header {
@@ -18,7 +20,13 @@
   font-size: 20px;
   display: flex;
   align-items: center;
+  background-color: #fff;
   justify-content: space-between;
+  transition: all 0.5s ease;
+}
+
+.deal-option-header.completed {
+  background-color: rgb(220, 255, 185);
 }
 
 .deal-option-header button {

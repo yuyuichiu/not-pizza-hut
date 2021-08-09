@@ -54,3 +54,20 @@
     height: 30px;
   }
 }
+
+@media (max-width: 770px) and (max-width: 1139px) {
+  .sectionBtn {
+    border-bottom: 1px solid #ccc;
+    padding: 0 5px;
+    height: auto;
+  }
+
+  .sectionBtn p{
+    font-size: 12px;
+  }
+
+  .sectionBtn img{
+    width: 24px;
+    height: 24px;
+  }
+}

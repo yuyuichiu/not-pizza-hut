@@ -10,18 +10,21 @@
   justify-content: center;
 }
 
-@media (max-width: 770px) and (max-width: 1139px) {
-  .bar{
-    width: 100%;
-    padding: 5px;
-    display: none;
-  }
-}
-
 @media (max-width: 1140px) {
   .bar{
     width: calc(100vw - 350px);
     padding: 0 10px;
     justify-content: flex-start;
+  }
+}
+
+@media (max-width: 770px) and (max-width: 1139px) {
+  .bar{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    justify-content: center;
+    z-index: 10;
   }
 }

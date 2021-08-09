@@ -7,7 +7,8 @@ import { mealList } from "../../Meals";
 import ChoiceRow from "./ChoiceRow";
 import Button from "../../../UI/Button";
 
-function outputUniqueId(prefix) {
+function getUniqueId(prefix) {
+  // Unique id to prevent combo with different choices overlapping.
   return `${prefix}_${(Date.now() + Math.random()).toString(36)}`;
 }
 
@@ -27,7 +28,7 @@ export default function ComboChoicesModal(props) {
         title: x.title,
         amountReq: x.amountReq,
         selectedAmount: 0,
-        selectedItems: [], // {productID, amount}
+        selectedItems: [], // {productID, amount, extraCharges}
       };
     })
   );
@@ -38,12 +39,18 @@ export default function ComboChoicesModal(props) {
     let translatedProducts = [...productIds];
 
     for (let c = 0; c < productIds.length; c++) {
-      translatedProducts[c] = productIds[c].map((id) => {
+      translatedProducts[c] = productIds[c].map((choice) => {
+        console.log('CHOICE', choice);
         // All id prefix matches the start of the name of its category
-        let belongsToCategory = id.replace(/_.*/, "").toUpperCase();
-        return mealList
+        let belongsToCategory = choice.id.replace(/_.*/, "").toUpperCase();
+
+        let translatedItem = mealList
           .filter((x) => x.category.startsWith(belongsToCategory))[0]
-          .items.filter((x) => x.id === id)[0];
+          .items.filter((x) => x.id === choice.id)[0];
+        console.log(translatedItem);
+        translatedItem.extraCharges = choice.extraCharges || 0;
+
+        return translatedItem
       });
     }
 
@@ -56,29 +63,30 @@ export default function ComboChoicesModal(props) {
     props.onClearModal();
   };
 
-  const editRowAmountHandler = (editAmt, targetRow, productId) => {
+  const editRowAmountHandler = (editAmt, targetRow, product) => {
     editRowManager((prevState) => {
+      // Update selected item information & row selected item count
       let targetIdx = prevState.findIndex((x) => x.title === targetRow);
       let prevAmount = prevState[targetIdx].selectedAmount;
       let updatedRowInfo = prevState.slice();
       let newSelectedItems = prevState[targetIdx].selectedItems;
 
-      // Update selected item information & row selected item count
-      let productItemIdx = newSelectedItems.findIndex(
-        (x) => x.productId === productId
-      );
+      let productItemIdx = newSelectedItems.findIndex((x) => x.productId === product.id);
       if (productItemIdx > -1) {
+        // Directly adjust selected item count if already exist
         newSelectedItems[productItemIdx].amount += editAmt;
         if (newSelectedItems[productItemIdx].amount <= 0) {
           newSelectedItems.splice(productItemIdx, 1);
         }
       } else {
+        // else, add new item to selectedItem
         newSelectedItems.push({
-          productId: productId,
+          productId: product.id,
           productTitle: mealList
-            .filter((x) => x.category.startsWith(productId.replace(/_.*/, "").toUpperCase()))[0]
-            .items.filter(x => x.id === productId)[0].title.toLowerCase(),
+            .filter((x) => x.category.startsWith(product.id.replace(/_.*/, "").toUpperCase()))[0]
+            .items.filter(x => x.id === product.id)[0].title.toLowerCase(),
           amount: editAmt,
+          extraChargesPerPiece: product.extraCharges
         });
       }
 
@@ -89,22 +97,23 @@ export default function ComboChoicesModal(props) {
   };
 
   const submitComboChoicesHandler = () => {
-    if (rowManager.every((x) => x.selectedAmount === x.amountReq)) {
-      // Wrap up final chosen items and total extra price, then add this item to cart
-      let amendedPrice = props.mainItem.price + 0; // to-do
+    if (rowManager.every((x) => x.selectedAmount >= x.amountReq)) {
+      // Wrap up final chosen items and calculate final price, then add this item to cart
       let comboChosenItems = rowManager.map((x) => x.selectedItems).flat();
+      let totalExtraCharges = comboChosenItems.reduce((accumulator, current) => accumulator + current.extraChargesPerPiece * current.amount, 0);
+      let amendedPrice = props.mainItem.price + totalExtraCharges;
 
       let toAdd = {
-        id: outputUniqueId(props.mainItem.id), // Id is based on time to ensure uniqueness
+        id: getUniqueId(props.mainItem.id),
         title: props.mainItem.title,
-        price: props.mainItem.price,
+        price: amendedPrice,
         amount: 1,
         itemOptions: comboChosenItems,
       };
 
       console.log("Added Cart Item:", toAdd);
       cartCtx.addCartItem(toAdd);
-      // props.onClearModal();
+      props.onClearModal();
     }
   };
 
@@ -119,7 +128,7 @@ export default function ComboChoicesModal(props) {
               key={idx}
               category={category}
               options={products[idx]}
-              isOpen={idx === 0}
+              isOpen={true}
               onRowAmountChange={editRowAmountHandler}
             />
           ))}

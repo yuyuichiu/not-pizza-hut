@@ -10,17 +10,18 @@ import styles from "./ChoiceItem.module.css";
   3) activeAmt: The amount maximum available to be chosen
 */
 export default function ChoiceItem(props) {
+  let isCategoryOptional = props.category === 'add on deal (optional)';
   let AmountButtonToRender = [];
-  for (let i = 1; i <= props.amountReq; i++) {
-    AmountButtonToRender.push(i);
-  }
+  for (let i = 1; i <= props.amountReq; i++) { AmountButtonToRender.push(i); }
+  if(isCategoryOptional){ AmountButtonToRender = [1,2,3,4] }
 
   const [amountChosen, editAmount] = useState(0);
 
   const amountSelectHandler = (newAmount) => {
     editAmount((prevState) => {
-      let amountToChange = newAmount === prevState ? +prevState : prevState - newAmount;
-      props.onRowAmountChange(amountToChange, props.meal.id);
+      let amountToChange =
+        newAmount === prevState ? +prevState : prevState - newAmount;
+      props.onRowAmountChange(amountToChange, props.meal);
       return newAmount === prevState ? 0 : newAmount;
     });
   };
@@ -39,12 +40,18 @@ export default function ChoiceItem(props) {
           <p>{props.meal.description}</p>
         </div>
 
+        {props.meal.extraCharges > 0 ? (
+          <p className={styles.extraCharges}>{`+ HK$ ${props.meal.extraCharges} / each`}</p>
+        ) : (
+          <p style={{ color: "#fff" }}>.</p>
+        )}
+
         {AmountButtonToRender.map((amt) => (
           <ChoiceAmountButton
             key={props.meal.id + amt}
             amount={amt}
             selected={amountChosen}
-            activeAmt={props.activeAmt}
+            activeAmt={isCategoryOptional ? Infinity : props.activeAmt}
             onSelection={amountSelectHandler}
           />
         ))}

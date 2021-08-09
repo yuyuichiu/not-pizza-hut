@@ -35,6 +35,19 @@
     width: calc(100vw - 350px);
     padding: 10px;
   }
+
+  .header img {
+    position: absolute;
+    left:  calc((100vw - 350px) / 2);
+    transform: translateX(-50%);
+  }
+
+  .header__toolbox{
+    width: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 @media (max-width: 770px) and (max-width: 1139px) {
@@ -43,7 +56,20 @@
     padding: 5px;
   }
 
+  .header img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   .header__toolbox{
-    display: none;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header small {
+    font-size: 13px;
   }
 }

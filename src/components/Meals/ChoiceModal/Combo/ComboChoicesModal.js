@@ -6,6 +6,7 @@ import styles from "./ComboChoicesModal.module.css";
 import { mealList } from "../../Meals";
 import ChoiceRow from "./ChoiceRow";
 import Button from "../../../UI/Button";
+import AmountButton from "../../../UI/AmountButton";
 
 function getUniqueId(prefix) {
   // Unique id to prevent combo with different choices overlapping.
@@ -32,6 +33,7 @@ export default function ComboChoicesModal(props) {
       };
     })
   );
+  const [isFinished, setIsFinished] = useState(true);
 
   // Translating productIds from mainItem into full product information
   useEffect(() => {
@@ -40,14 +42,12 @@ export default function ComboChoicesModal(props) {
 
     for (let c = 0; c < productIds.length; c++) {
       translatedProducts[c] = productIds[c].map((choice) => {
-        console.log('CHOICE', choice);
         // All id prefix matches the start of the name of its category
         let belongsToCategory = choice.id.replace(/_.*/, "").toUpperCase();
 
         let translatedItem = mealList
           .filter((x) => x.category.startsWith(belongsToCategory))[0]
           .items.filter((x) => x.id === choice.id)[0];
-        console.log(translatedItem);
         translatedItem.extraCharges = choice.extraCharges || 0;
 
         return translatedItem
@@ -56,6 +56,7 @@ export default function ComboChoicesModal(props) {
 
     setCategories(props.mainItem.category);
     setProducts(translatedProducts);
+    setIsFinished(true);
   }, [props.mainItem]);
 
   /* Handlers */
@@ -89,16 +90,21 @@ export default function ComboChoicesModal(props) {
           extraChargesPerPiece: product.extraCharges
         });
       }
-
+      
       updatedRowInfo[targetIdx].selectedItems = newSelectedItems;
       updatedRowInfo[targetIdx].selectedAmount = prevAmount + editAmt;
       return updatedRowInfo;
     });
+
+    // A timeout to check updated state for enabling the submit button
+    setTimeout(() => {
+      setIsFinished(!(rowManager.every((x) => x.selectedAmount >= x.amountReq)));
+    }, 10);
   };
 
   const submitComboChoicesHandler = () => {
+    // Wrap up final chosen items and calculate final price, then add this item to cart
     if (rowManager.every((x) => x.selectedAmount >= x.amountReq)) {
-      // Wrap up final chosen items and calculate final price, then add this item to cart
       let comboChosenItems = rowManager.map((x) => x.selectedItems).flat();
       let totalExtraCharges = comboChosenItems.reduce((accumulator, current) => accumulator + current.extraChargesPerPiece * current.amount, 0);
       let amendedPrice = props.mainItem.price + totalExtraCharges;
@@ -111,7 +117,6 @@ export default function ComboChoicesModal(props) {
         itemOptions: comboChosenItems,
       };
 
-      console.log("Added Cart Item:", toAdd);
       cartCtx.addCartItem(toAdd);
       props.onClearModal();
     }
@@ -119,8 +124,15 @@ export default function ComboChoicesModal(props) {
 
   return (
     <Modal onClearModal={clearModalHandler}>
+      <AmountButton className={styles.closeBtn} onClick={clearModalHandler}>X</AmountButton>
       <div className={styles.msg}>
-        <div className={styles.header}>{/* <img src={pic}></img> */}</div>
+        <div className={styles.header}>
+          <img src={process.env.PUBLIC_URL + props.mainItem.image} alt={props.mainItem.title}></img>
+          <div className={styles['header-mod']}>
+            <h2>{props.mainItem.title.toLowerCase()}</h2>
+            <p>{props.mainItem.description}</p>
+          </div>
+        </div>
 
         <div className={styles.container}>
           {categories.map((category, idx) => (
@@ -137,6 +149,7 @@ export default function ComboChoicesModal(props) {
         <Button
           onClick={submitComboChoicesHandler}
           className={styles.submitBtn}
+          disabled={isFinished}
         >
           Complete
         </Button>

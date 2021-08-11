@@ -241,16 +241,253 @@ export const mealList = [
     ],
   },
   {
-    category: "MY BOX",
+    category: "BOX",
     items: [
       {
         id: "BOX_1",
-        title: "",
-        price: 134,
-        description: "",
+        title: "MY BOX - HAWAIIAN PARADISE MINI PIZZA",
+        price: 55,
+        description: `Hawaiian Paradise Mini Pizza X 1
+        Snack X 1`,
+        category: [
+          { title: "mini pizza", amountReq: 1 },
+          { title: "starter", amountReq: 1 },
+          { title: "drink", amountReq: 1 },
+        ],
+        categoryProductsId: [
+          [
+            { id: "UNPUBLISHED_BOX-PIZZA-1-PAN" },
+            { id: "UNPUBLISHED_BOX-PIZZA-1-CRISPY" },
+            { id: "UNPUBLISHED_BOX-PIZZA-1-STUFFED-CRUST", extraCharges: 11 },
+            { id: "UNPUBLISHED_BOX-PIZZA-1-GOLDEN-CRUST", extraCharges: 15 },
+          ],
+          [
+            { id: "UNPUBLISHED_BOX-STARTER-A" },
+            { id: "UNPUBLISHED_BOX-STARTER-B" },
+            { id: "UNPUBLISHED_BOX-STARTER-C" },
+          ],
+          [
+            { id: "UNPUBLISHED_NODRINK" },
+            { id: "DRINK_1", extraCharges: 5 },
+            { id: "DRINK_2", extraCharges: 5 },
+            { id: "DRINK_3", extraCharges: 5 },
+          ]
+        ],
         image: "/pizza_product/BOX_01.png",
       },
-    ],
+      {
+        id: "BOX_2",
+        title: "MY BOX - HAWAIIAN PARADISE MINI PIZZA",
+        price: 55,
+        description: `Hawaiian Paradise Mini Pizza X 1
+        Snack X 1`,
+        category: [
+          { title: "mini pizza", amountReq: 1 },
+          { title: "starter", amountReq: 1 },
+          { title: "drink", amountReq: 1 },
+        ],
+        categoryProductsId: [
+          [
+            { id: "UNPUBLISHED_BOX-PIZZA-2-PAN" },
+            { id: "UNPUBLISHED_BOX-PIZZA-2-CRISPY" },
+            { id: "UNPUBLISHED_BOX-PIZZA-2-STUFFED-CRUST", extraCharges: 11 },
+            { id: "UNPUBLISHED_BOX-PIZZA-2-GOLDEN-CRUST", extraCharges: 15 },
+          ],
+          [
+            { id: "UNPUBLISHED_BOX-STARTER-A" },
+            { id: "UNPUBLISHED_BOX-STARTER-B" },
+            { id: "UNPUBLISHED_BOX-STARTER-C" },
+          ],
+          [
+            { id: "UNPUBLISHED_NODRINK" },
+            { id: "DRINK_1", extraCharges: 5 },
+            { id: "DRINK_2", extraCharges: 5 },
+            { id: "DRINK_3", extraCharges: 5 },
+          ]
+        ],
+        image: "/pizza_product/BOX_02.png",
+      },
+      {
+        id: "BOX_3",
+        title: "MY BOX - THOUSAND ISLAND SEAFOOD MINI PIZZA",
+        price: 72,
+        description: `Thousand Island Seafood Mini Pizza X 1
+        Snack X 1`,
+        category: [
+          { title: "mini pizza", amountReq: 1 },
+          { title: "starter", amountReq: 1 },
+          { title: "drink", amountReq: 1 },
+        ],
+        categoryProductsId: [
+          [
+            { id: "UNPUBLISHED_BOX-PIZZA-3-PAN" },
+            { id: "UNPUBLISHED_BOX-PIZZA-3-CRISPY" },
+            { id: "UNPUBLISHED_BOX-PIZZA-3-STUFFED-CRUST", extraCharges: 11 },
+            { id: "UNPUBLISHED_BOX-PIZZA-3-GOLDEN-CRUST", extraCharges: 15 },
+          ],
+          [
+            { id: "UNPUBLISHED_BOX-STARTER-A" },
+            { id: "UNPUBLISHED_BOX-STARTER-B" },
+            { id: "UNPUBLISHED_BOX-STARTER-C" },
+          ],
+          [
+            { id: "UNPUBLISHED_NODRINK" },
+            { id: "DRINK_1", extraCharges: 5 },
+            { id: "DRINK_2", extraCharges: 5 },
+            { id: "DRINK_3", extraCharges: 5 },
+          ]
+        ],
+        image: "/pizza_product/BOX_03.png",
+      },
+      {
+        id: "BOX_4",
+        title: "MY BOX - CHICKEN MUSHROOM MINI PIZZA WITH WHITE TRUFFLE SAUCE",
+        price: 72,
+        description: `Chicken Mushroom Mini Pizza with White Truffle Sauce X 1
+        Snack X 1`,
+        category: [
+          { title: "mini pizza", amountReq: 1 },
+          { title: "starter", amountReq: 1 },
+          { title: "drink", amountReq: 1 },
+        ],
+        categoryProductsId: [
+          [
+            { id: "UNPUBLISHED_BOX-PIZZA-4-PAN" },
+            { id: "UNPUBLISHED_BOX-PIZZA-4-CRISPY" },
+            { id: "UNPUBLISHED_BOX-PIZZA-4-STUFFED-CRUST", extraCharges: 11 },
+            { id: "UNPUBLISHED_BOX-PIZZA-4-GOLDEN-CRUST", extraCharges: 15 },
+          ],
+          [
+            { id: "UNPUBLISHED_BOX-STARTER-A" },
+            { id: "UNPUBLISHED_BOX-STARTER-B" },
+            { id: "UNPUBLISHED_BOX-STARTER-C" },
+          ],
+          [
+            { id: "UNPUBLISHED_NODRINK" },
+            { id: "DRINK_1", extraCharges: 5 },
+            { id: "DRINK_2", extraCharges: 5 },
+            { id: "DRINK_3", extraCharges: 5 },
+          ]
+        ],
+        image: "/pizza_product/BOX_04.png",
+      },
+      {
+        id: "BOX_5",
+        title: "MY BOX - SPAGHETTI AMERICANA",
+        price: 55,
+        description: `Spaghetti Americana X 1
+        Snack X 1`,
+        category: [
+          { title: "pasta / rice", amountReq: 1 },
+          { title: "starter", amountReq: 1 },
+          { title: "drink", amountReq: 1 },
+        ],
+        categoryProductsId: [
+          [
+            { id: "PASTA_9" },
+          ],
+          [
+            { id: "UNPUBLISHED_BOX-STARTER-A" },
+            { id: "UNPUBLISHED_BOX-STARTER-B" },
+            { id: "UNPUBLISHED_BOX-STARTER-C" },
+          ],
+          [
+            { id: "UNPUBLISHED_NODRINK" },
+            { id: "DRINK_1", extraCharges: 5 },
+            { id: "DRINK_2", extraCharges: 5 },
+            { id: "DRINK_3", extraCharges: 5 },
+          ]
+        ],
+        image: "/pizza_product/BOX_05.png",
+      },
+      {
+        id: "BOX_6",
+        title: "MY BOX - SPAGHETTI BOLOGNESE (BEEF)",
+        price: 72,
+        description: `Spaghetti Bolognese (Beef) X 1
+        Snack X 1`,
+        category: [
+          { title: "pasta / rice", amountReq: 1 },
+          { title: "starter", amountReq: 1 },
+          { title: "drink", amountReq: 1 },
+        ],
+        categoryProductsId: [
+          [
+            { id: "PASTA_1" },
+          ],
+          [
+            { id: "UNPUBLISHED_BOX-STARTER-A" },
+            { id: "UNPUBLISHED_BOX-STARTER-B" },
+            { id: "UNPUBLISHED_BOX-STARTER-C" },
+          ],
+          [
+            { id: "UNPUBLISHED_NODRINK" },
+            { id: "DRINK_1", extraCharges: 5 },
+            { id: "DRINK_2", extraCharges: 5 },
+            { id: "DRINK_3", extraCharges: 5 },
+          ]
+        ],
+        image: "/pizza_product/BOX_06.png",
+      },
+      {
+        id: "BOX_7",
+        title: "MY BOX - BAKED SPINACH AND MUSHROOM PENNE WITH CHEESE",
+        price: 69,
+        description: `Baked Spinach and Mushroom Penne with Cheese X 1
+        Snack X 1`,
+        category: [
+          { title: "pasta / rice", amountReq: 1 },
+          { title: "starter", amountReq: 1 },
+          { title: "drink", amountReq: 1 },
+        ],
+        categoryProductsId: [
+          [
+            { id: "PASTA_4" },
+          ],
+          [
+            { id: "UNPUBLISHED_BOX-STARTER-A" },
+            { id: "UNPUBLISHED_BOX-STARTER-B" },
+            { id: "UNPUBLISHED_BOX-STARTER-C" },
+          ],
+          [
+            { id: "UNPUBLISHED_NODRINK" },
+            { id: "DRINK_1", extraCharges: 5 },
+            { id: "DRINK_2", extraCharges: 5 },
+            { id: "DRINK_3", extraCharges: 5 },
+          ]
+        ],
+        image: "/pizza_product/BOX_07.png",
+      },
+      {
+        id: "BOX_8",
+        title: "MY BOX - SEAFOOD FETTUCCINE",
+        price: 72,
+        description: `Seafood fettuccine X 1
+        Snack X 1`,
+        category: [
+          { title: "pasta / rice", amountReq: 1 },
+          { title: "starter", amountReq: 1 },
+          { title: "drink", amountReq: 1 },
+        ],
+        categoryProductsId: [
+          [
+            { id: "PASTA_2" },
+          ],
+          [
+            { id: "UNPUBLISHED_BOX-STARTER-A" },
+            { id: "UNPUBLISHED_BOX-STARTER-B" },
+            { id: "UNPUBLISHED_BOX-STARTER-C" },
+          ],
+          [
+            { id: "UNPUBLISHED_NODRINK" },
+            { id: "DRINK_1", extraCharges: 5 },
+            { id: "DRINK_2", extraCharges: 5 },
+            { id: "DRINK_3", extraCharges: 5 },
+          ]
+        ],
+        image: "/pizza_product/BOX_08.png",
+      },
+    ]
   },
   {
     category: "PIZZA",
@@ -266,8 +503,7 @@ export const mealList = [
         id: "PIZZA_2",
         title: "3 CUP CHICKEN PIZZA",
         price: 138,
-        description:
-          "3 Cup Chicken, Red Pepper, Onion, Thai Basil, 3 Cup Chicken Sauce",
+        description: "3 Cup Chicken, Red Pepper, Onion, Thai Basil, 3 Cup Chicken Sauce",
         image: "/pizza_product/PIZZA_02.png",
       },
       {
@@ -295,48 +531,42 @@ export const mealList = [
         id: "PIZZA_6",
         title: "SUPER SUPREME (TOMATO SAUCE)",
         price: 126,
-        description:
-          "Ham, Pepperoni, Pork, Beef, Mushroom, Onion, Pepper, Pineapple and Tomato Sauce",
+        description: "Ham, Pepperoni, Pork, Beef, Mushroom, Onion, Pepper, Pineapple and Tomato Sauce",
         image: "/pizza_product/PIZZA_06.png",
       },
       {
         id: "PIZZA_7",
         title: "SEAFOOD SUPREME (THOUSAND ISLAND SAUCE)",
         price: 160,
-        description:
-          "Seafood, Baby Scallop, Shrimp, Clam, Pineapple, Green Pepper, Red Pepper, Red Onion and Thousand Island Sauce",
+        description: "Seafood, Baby Scallop, Shrimp, Clam, Pineapple, Green Pepper, Red Pepper, Red Onion and Thousand Island Sauce",
         image: "/pizza_product/PIZZA_07.png",
       },
       {
         id: "PIZZA_8",
         title: "MEAT SUPREME (TOMATO SAUCE)",
         price: 146,
-        description:
-          "Chicken, Bacon, Ham, Pork, Beef, Pepperoni and Tomato Sauce",
+        description: "Chicken, Bacon, Ham, Pork, Beef, Pepperoni and Tomato Sauce",
         image: "/pizza_product/PIZZA_08.png",
       },
       {
         id: "PIZZA_9",
         title: "VEGGIE SUPREME (TOMATO SAUCE)",
         price: 146,
-        description:
-          "Cherry Tomato, Cucumber, Mushroom, Pineapple, Corn and Tomato Sauce",
+        description: "Cherry Tomato, Cucumber, Mushroom, Pineapple, Corn and Tomato Sauce",
         image: "/pizza_product/PIZZA_09.png",
       },
       {
         id: "PIZZA_10",
         title: "CHICKEN SUPREME (TOMATO SAUCE)",
         price: 152,
-        description:
-          "Chicken, Mushroom, Red Pepper, Pineapple and Tomato Sauce",
+        description: "Chicken, Mushroom, Red Pepper, Pineapple and Tomato Sauce",
         image: "/pizza_product/PIZZA_10.png",
       },
       {
         id: "PIZZA_11",
         title: "SUPREME (TOMATO SAUCE)",
         price: 148,
-        description:
-          "Beef, Pork, Green Pepper, Mushroom, Pepperoni, Onion and Tomato Sauce",
+        description: "Beef, Pork, Green Pepper, Mushroom, Pepperoni, Onion and Tomato Sauce",
         image: "/pizza_product/PIZZA_11.png",
       },
     ],
@@ -660,8 +890,149 @@ export const mealList = [
     ]
   },
   {
-    category: 'OTHERS',
-    items: []
+    category: 'UNPUBLISHED',
+    items: [
+      {
+        id: "UNPUBLISHED_NODRINK",
+        title: "NO DRINKS",
+        price: 0,
+        description: "",
+        image: "/pizza_product/BOX_nodrink.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-STARTER-A",
+        title: "CRISPY SHRIMPS (3 PCS)",
+        price: 64,
+        description: "Tasty shrimps with crispy outside",
+        image: "/pizza_product/BOX_starterA.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-STARTER-B",
+        title: "ITALIAN MINI SAUSAGE (3 PCS) AND POTATO WAFFLE",
+        price: 64,
+        description: "Crispy potato waffle with classic mini sausage. Every bites, every satisfaction",
+        image: "/pizza_product/BOX_starterB.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-STARTER-C",
+        title: "CRISPY CHICKEN STRIPS (3PCS)",
+        price: 64,
+        description: "Deep fried crunchy chicken strips yet juicy and tender",
+        image: "/pizza_product/BOX_starterC.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-1-PAN",
+        title: "HAWAIIAN PARADISE MINI PAN PIZZA",
+        price: 64,
+        description: "Ham, Pineapple and Tomato Sauce",
+        image: "/pizza_product/BOX_01_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-1-CRISPY",
+        title: "HAWAIIAN PARADISE MINI THIN'N CRISPY PIZZA",
+        price: 64,
+        description: "Ham, Pineapple and Tomato Sauce",
+        image: "/pizza_product/BOX_01_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-1-STUFFED-CRUST",
+        title: "HAWAIIAN PARADISE MINI STUFFED CRUST PIZZA",
+        price: 64,
+        description: "Ham, Pineapple and Tomato Sauce",
+        image: "/pizza_product/BOX_01_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-1-GOLDEN-CRUST",
+        title: "HAWAIIAN PARADISE MINI GOLDEN CRUST PIZZA",
+        price: 64,
+        description: "Ham, Pineapple and Tomato Sauce",
+        image: "/pizza_product/BOX_01_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-2-PAN",
+        title: "SUPREME PAN PIZZA",
+        price: 64,
+        description: "Beef, Pork, Green Pepper, Mushroom, Pepperoni, Onion and Tomato Sauce",
+        image: "/pizza_product/BOX_02_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-2-CRISPY",
+        title: "SUPREME THIN'N CRISPY PIZZA",
+        price: 64,
+        description: "Beef, Pork, Green Pepper, Mushroom, Pepperoni, Onion and Tomato Sauce",
+        image: "/pizza_product/BOX_02_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-2-STUFFED-CRUST",
+        title: "SUPREME STUFFED CRUST PIZZA",
+        price: 64,
+        description: "Beef, Pork, Green Pepper, Mushroom, Pepperoni, Onion and Tomato Sauce",
+        image: "/pizza_product/BOX_02_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-2-GOLDEN-CRUST",
+        title: "SUPREME GOLDEN CRUST PIZZA",
+        price: 64,
+        description: "Beef, Pork, Green Pepper, Mushroom, Pepperoni, Onion and Tomato Sauce",
+        image: "/pizza_product/BOX_02_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-3-PAN",
+        title: "THOUSAND ISLAND SEAFOOD MINI PAN PIZZA",
+        price: 64,
+        description: "Seafood, Tuna, Pineapple, Green Bell Pepper, Red Bell Pepper and Thousand Island Sauce",
+        image: "/pizza_product/BOX_03_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-3-CRISPY",
+        title: "THOUSAND ISLAND SEAFOOD MINI THIN'N CRISPY PIZZA",
+        price: 64,
+        description: "Seafood, Tuna, Pineapple, Green Bell Pepper, Red Bell Pepper and Thousand Island Sauce",
+        image: "/pizza_product/BOX_03_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-3-STUFFED-CRUST",
+        title: "THOUSAND ISLAND SEAFOOD MINI STUFFED CRUST PIZZA",
+        price: 64,
+        description: "Seafood, Tuna, Pineapple, Green Bell Pepper, Red Bell Pepper and Thousand Island Sauce",
+        image: "/pizza_product/BOX_03_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-3-GOLDEN-CRUST",
+        title: "THOUSAND ISLAND SEAFOOD MINI GOLDEN CRUST PIZZA",
+        price: 64,
+        description: "Seafood, Tuna, Pineapple, Green Bell Pepper, Red Bell Pepper and Thousand Island Sauce",
+        image: "/pizza_product/BOX_03_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-4-PAN",
+        title: "CHICKEN MUSHROOM MINI PAN PIZZA",
+        price: 64,
+        description: "Mushroom, Onion, White Sauce",
+        image: "/pizza_product/BOX_04_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-4-CRISPY",
+        title: "CHICKEN MUSHROOM MINI THIN'N CRISPY PIZZA",
+        price: 64,
+        description: "Mushroom, Onion, White Sauce",
+        image: "/pizza_product/BOX_04_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-4-STUFFED-CRUST",
+        title: "CHICKEN MUSHROOM MINI STUFFED CRUST PIZZA",
+        price: 64,
+        description: "Mushroom, Onion, White Sauce",
+        image: "/pizza_product/BOX_04_pizza.png",
+      },
+      {
+        id: "UNPUBLISHED_BOX-PIZZA-4-GOLDEN-CRUST",
+        title: "CHICKEN MUSHROOM MINI GOLDEN CRUST PIZZA",
+        price: 64,
+        description: "Mushroom, Onion, White Sauce",
+        image: "/pizza_product/BOX_04_pizza.png",
+      },
+    ]
   }
 ];
 
@@ -691,6 +1062,10 @@ export default function Meals(props) {
               onModalOpen={modalOpenHandler}
               large="true"
             />
+          ))}
+        {props.activeSection === "MY BOX" && 
+          filteredMeals("BOX").map((x) => (
+            <MealItem key={x.id} meal={x} onModalOpen={modalOpenHandler} large="true" />
           ))}
         {props.activeSection === "PIZZA" &&
           filteredMeals("PIZZA").map((x) => (

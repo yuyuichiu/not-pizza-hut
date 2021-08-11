@@ -9,7 +9,7 @@ const MealItem = (props) => {
   const cartCtx = useContext(CartContext);
   
   const addCartItemHandler = () => {
-    if(props.meal.id.startsWith('PIZZA') || props.meal.id.startsWith('COMBO')){
+    if(props.meal.id.startsWith('PIZZA') || props.meal.id.startsWith('COMBO') || props.meal.id.startsWith('BOX')){
       props.onModalOpen(props.meal);
       return;
     }

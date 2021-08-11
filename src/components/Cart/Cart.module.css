@@ -104,6 +104,22 @@ ul {
   transform: scale(0.96);
 }
 
+.mobileMenuToggle.animation {
+  animation: animationOnAdd 0.5s ease-out forwards;
+}
+
+@keyframes animationOnAdd {
+  0% {
+    transform: scale(1);
+  }
+  50%{
+    transform: translateY(-5px) scale(1.1);   
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @media (max-width: 770px) {
   .cart{
     z-index: 12;

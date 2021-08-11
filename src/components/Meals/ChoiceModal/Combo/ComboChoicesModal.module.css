@@ -1,31 +1,61 @@
 .msg {
   margin-top: 2vh;
   position: fixed;
-  background-color: #fff;
+  background-image: url('../../../../assets/food_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 10px;
   width: 80%;
   min-height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+}
+
+.closeBtn {
+  position: absolute;
+  background-color: #666;
+  color: #eee;
+  font-size: 14px;
+  top: 20px;
+  right: calc(10%);
+  z-index: 5;
 }
 
 .header {
-  background-color: khaki;
-  height: 60px;
+  background-color: #eee;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header img {
-  width: 100%;
-  height: 200px;
-  vertical-align: middle;
+  height: 100px;
+  float: left;
+}
+
+.header h2 {
+  text-transform: capitalize;
 }
 
 .container {
-  height: 80vh;
+  height: 75vh;
   overflow-y: scroll;
 }
 
 .submitBtn {
   padding: 5px 20px;
+}
+
+@media (max-width: 770px) {
+  .container {
+    height: 72vh;
+  }
+
+  .header-mod {
+    display: none;
+  }
 }

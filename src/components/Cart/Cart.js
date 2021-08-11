@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import { FaLevelUpAlt, FaShoppingCart } from 'react-icons/fa'
 import CartContext from '../../store/cart-context';
 import Button from '../UI/Button';
@@ -9,7 +9,14 @@ import CartItem from './CartItem/CartItem';
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
   const userNotes = useRef('');
-  const [mobileCartMenuToggle, setMoblieCartMenuToggle] = useState(false);
+  const [mobileCartMenuToggle, setMobileCartMenuToggle] = useState(false);
+  const [isBtnAnimation, setMobileButtonAnimation] = useState(false);
+
+  useEffect(() => {
+    if(cartCtx.items.length > 0) setMobileButtonAnimation(true);
+    setTimeout(() => setMobileButtonAnimation(false), 500);
+    return (() => setMobileButtonAnimation(false))
+  }, [cartCtx])
 
   const orderSubmitHandler = () => {
     console.log('Submitted:', {
@@ -20,7 +27,9 @@ const Cart = (props) => {
   }
   
   return <div className={`${styles.cart} ${mobileCartMenuToggle ? styles['mobile-open'] : ''}`}>
-    <button className={styles.mobileMenuToggle} onClick={() => setMoblieCartMenuToggle(!mobileCartMenuToggle)}>
+    <button 
+    className={`${styles.mobileMenuToggle} ${isBtnAnimation && !mobileCartMenuToggle ? styles.animation : ''}`}
+    onClick={() => setMobileCartMenuToggle(!mobileCartMenuToggle)}>
       {mobileCartMenuToggle ? <FaLevelUpAlt /> : <FaShoppingCart />}
     </button>
     <h2 className={styles.cartTitle}>Your Cart</h2>

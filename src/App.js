@@ -18,6 +18,7 @@ function App() {
     // To do: identify product type and open correct modal.
     if (item.id.startsWith('PIZZA')) { setPizzaModal(item) }
     if (item.id.startsWith('COMBO')) { setComboModal(item) }
+    if (item.id.startsWith('BOX')) { setComboModal(item) }
   }
 
   const modalCloseHandler = () => {

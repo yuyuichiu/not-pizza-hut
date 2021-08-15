@@ -25,7 +25,7 @@ const MealItem = (props) => {
   return <div className={`${styles.mealItem} ${props.large && styles.large}`}>
     <div className={styles.inner} >
       <div className={styles.background}>
-        {!isImageLoaded && <div class={styles.placeholder}></div>}
+        {!isImageLoaded && <div className={styles.placeholder}></div>}
         <img src={process.env.PUBLIC_URL + props.meal.image} alt={props.meal.title} onLoad={() => setIsImageLoaded(true)}></img>
       </div>
       <div className={styles.meta}>

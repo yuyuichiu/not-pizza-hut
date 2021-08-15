@@ -4,8 +4,6 @@ import CartContext from './cart-context';
 const defaultCartState = {
   items: [],
   totalPrice: 0,
-  needCutlery: false,
-  needSeasonings : false,
 }
 
 const cartReducer = (prevState, action) => {
@@ -79,15 +77,16 @@ const CartProvider = (props) => {
     dispatchCartAction({type: 'REMOVE', item: item});
   }
 
+  const clearCartHandler = () => dispatchCartAction({type: 'CLEAR'})
+
   // Final step: build context by linking to state data
   const cartCtx = {
     items: cartState.items,
     totalPrice: cartState.totalPrice,
-    needCutlery: cartState.needCutlery,
-    needSeasonings: cartState.needSeasonings,
     addCartItem: addCartItemHandler,
     reduceCartItem: reduceCartItemHandler,
     removeCartItem: removeCartItemHandler,
+    clearCart: clearCartHandler,
   }
   
   return <CartContext.Provider value={cartCtx}>

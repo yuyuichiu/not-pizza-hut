@@ -1,0 +1,77 @@
+:root{
+  --inactive-toggle-color: #ccc;
+  --active-toggle-color: #70a401;
+  --ball-color: #fff;
+  --toggle-width: 60px;
+  --toggle-height: 30px;
+  /* Travel distance = width - height */
+  --ball-travel-distance: 30px;
+}
+
+.toggle-container{
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+  width: 90px;
+}
+
+.toggle-container > .toggle{
+  position: absolute;
+  opacity: 0;
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+}
+
+.toggle-container > .label{
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  border-radius: 50px;
+  background-color: var(--inactive-toggle-color);
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.toggle-container > .toggle.active ~ .label{
+  background-color: var(--active-toggle-color);
+}
+
+.toggle-container > .label > .ball{
+  position: absolute;
+  width: calc(var(--toggle-height) - 6px);
+  height: calc(var(--toggle-height) - 6px);
+  left: 3px;
+  border-radius: 50%;
+  background-color: var(--ball-color);
+  animation: slideOff 0.2s forwards;
+}
+
+@keyframes slideOff{
+  0%{
+      transform: translate(var(--ball-travel-distance)) scale(1);
+  }
+  50%{
+      transform: translate(calc(var(--ball-travel-distance) / 2)) scale(1.3);
+  }
+  100%{
+      transform: translate(0px) scale(1);
+  }
+}
+
+@keyframes slideOn {
+  0%{
+      transform: translate(0px) scale(1);
+  }
+  50%{
+      transform: translate(calc(var(--ball-travel-distance) / 2)) scale(1.3);
+  }
+  100%{
+      transform: translate(var(--ball-travel-distance)) scale(1);
+  }    
+}
+
+.toggle-container > .toggle.active ~ .label > .ball{
+  animation: slideOn 0.2s forwards;
+}

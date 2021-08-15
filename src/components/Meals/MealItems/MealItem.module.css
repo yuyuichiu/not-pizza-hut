@@ -60,6 +60,41 @@
   white-space: pre-line;
 }
 
+.placeholder {
+  position: absolute;
+  width: 100%;
+  height: 190px;
+  max-width: 100%;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mealItem.large .placeholder {
+  height: 220px;
+}
+
+.placeholder::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 5px solid #ccc;
+  border-top: 5px solid rgb(119, 119, 119);
+  border-radius: 50%;
+  animation: loadingSpin 1s linear infinite;
+}
+
+@keyframes loadingSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media  (max-width: 770px) and (max-width: 1139px) {
   .mealItem{
     flex: 0 1 50%;

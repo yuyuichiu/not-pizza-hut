@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 
 import styles from './MealItem.module.css'
 import PriceButton from './PriceButton';
@@ -7,6 +7,7 @@ import CartContext from '../../../store/cart-context';
 // Props: meal (with id, image, title, description and price)
 const MealItem = (props) => {
   const cartCtx = useContext(CartContext);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   
   const addCartItemHandler = () => {
     if(props.meal.id.startsWith('PIZZA') || props.meal.id.startsWith('COMBO') || props.meal.id.startsWith('BOX')){
@@ -24,7 +25,8 @@ const MealItem = (props) => {
   return <div className={`${styles.mealItem} ${props.large && styles.large}`}>
     <div className={styles.inner} >
       <div className={styles.background}>
-        <img src={process.env.PUBLIC_URL + props.meal.image} alt={props.meal.title}></img>
+        {!isImageLoaded && <div class={styles.placeholder}></div>}
+        <img src={process.env.PUBLIC_URL + props.meal.image} alt={props.meal.title} onLoad={() => setIsImageLoaded(true)}></img>
       </div>
       <div className={styles.meta}>
         <h3>{props.meal.title}</h3>

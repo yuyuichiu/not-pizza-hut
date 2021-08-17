@@ -26,27 +26,6 @@ const MealItem = (props) => {
     });
   };
 
-  const metaContent = isLoaded ? (
-    <>
-    <div className={styles.meta}>
-      <h3>{props.meal.title}</h3>
-      <p>{props.meal.description}</p>
-    </div>
-    <PriceButton
-          id={props.meal.id}
-          price={props.meal.price}
-          onClick={addCartItemHandler}
-    />
-    </>
-  ) : (
-    <>
-    <div className={styles.meta}>
-      <h3>Loading...</h3>
-    </div>
-    <button className={styles.priceBtn}>Loading...</button>
-    </>
-  );
-
   return (
     <div className={`${styles.mealItem} ${props.large && styles.large}`}>
       <div className={styles.inner}>
@@ -62,8 +41,21 @@ const MealItem = (props) => {
           {/* <img src={process.env.PUBLIC_URL + props.meal.image} alt={props.meal.title} onLoad={() => setIsLoaded(true)}></img> */}
         </div>
 
-        {metaContent}
-
+        {!isLoaded && <><div className={styles.meta}>
+          <h3>Loading...</h3>
+        </div>
+        <button className={styles.priceBtn}>Loading...</button></>}
+        {isLoaded && <>
+        <div className={styles.meta}>
+          <h3>{props.meal.title}</h3>
+          <p>{props.meal.description}</p>
+        </div>
+        <PriceButton
+          id={props.meal.id}
+          price={props.meal.price}
+          onClick={addCartItemHandler}
+        />
+        </>}
         
       </div>
     </div>

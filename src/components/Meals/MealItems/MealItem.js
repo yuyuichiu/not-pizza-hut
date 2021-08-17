@@ -41,10 +41,9 @@ const MealItem = (props) => {
   ) : (
     <>
     <div className={styles.meta}>
-      <h3>{props.meal.title}</h3>
-      <p>{props.meal.description}</p>
+      <h3>Loading...</h3>
     </div>
-    <PriceButton id={props.meal.id} price={props.meal.price}></PriceButton>
+    <PriceButton id={'DRINK_1'} price={0}></PriceButton>
     </>
   );
 
@@ -57,7 +56,7 @@ const MealItem = (props) => {
             <img
               src={require(`../../../assets${props.meal.image}`).default}
               alt={props.meal.title}
-              onLoad={() => setIsLoaded(true)}
+              onLoad={() => setIsLoaded(false)}
             ></img>
           )}
           {/* <img src={process.env.PUBLIC_URL + props.meal.image} alt={props.meal.title} onLoad={() => setIsLoaded(true)}></img> */}

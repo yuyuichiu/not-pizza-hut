@@ -33,7 +33,7 @@ const MealItem = (props) => {
           {!isLoaded && <div className={styles.placeholder}></div>}
           {props.meal.image && (
             <img
-              src={require(`../../../assets${props.meal.image}`).default}
+              src={require(`../../../assets${props.meal.image.replace('png','webp').replace('pizza_product','pizza_products_webp')}`).default}
               alt={props.meal.title}
               onLoad={() => setIsLoaded(true)}
             ></img>

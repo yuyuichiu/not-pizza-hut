@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.msg {
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
+  width: 80%;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.msg h2, .msg p {
+  font-family: 'Urbanist';
+  text-align: center;
+  margin: 5px;
+}
+
+.msg .Button {
+  width: 100px;
+}

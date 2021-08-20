@@ -31,7 +31,7 @@ export default function ChoiceItem(props) {
       <div className={styles.inner}>
         <div className={styles.background}>
           <img
-            src={process.env.PUBLIC_URL + props.meal.image}
+            src={require(`../../../../assets${props.meal.image}`).default}
             alt={props.meal.title}
           ></img>
         </div>

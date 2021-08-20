@@ -127,7 +127,7 @@ export default function ComboChoicesModal(props) {
       <div className={styles.msg}>
         <AmountButton className={styles.closeBtn} onClick={clearModalHandler}>X</AmountButton>
         <div className={styles.header}>
-          <img src={process.env.PUBLIC_URL + props.mainItem.image} alt={props.mainItem.title}></img>
+          <img src={require(`../../../../assets${props.mainItem.image}`).default} alt={props.mainItem.title}></img>
           <div className={styles['header-mod']}>
             <h2>{props.mainItem.title.toLowerCase()}</h2>
             <p>{props.mainItem.description}</p>

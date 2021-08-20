@@ -15,37 +15,37 @@ const pizzaOptions = [
     pizzaType: 'HANDCRAFT',
     crustTitle: 'Hut Signature | Hand Crafted Pizza',
     extraCharge: 0,
-    image: "/pizza_product/PIE_HANDCRAFT.png"
+    image: "/pizza_products_webp/PIE_HANDCRAFT.webp"
   },
   {
     pizzaType: 'OATMEAL',
     crustTitle: 'Hut Signature | Oatmeal Pizza',
     extraCharge: 0,
-    image: "/pizza_product/PIE_OATMEAL.png"
+    image: "/pizza_products_webp/PIE_OATMEAL.webp"
   },
   {
     pizzaType: 'PAN',
     crustTitle: 'Pan Pizza',
     extraCharge: 0,
-    image: "/pizza_product/PIE_PAN.png"
+    image: "/pizza_products_webp/PIE_PAN.webp"
   },
   {
     pizzaType: 'CRISPY',
     crustTitle: 'Crispy Pizza',
     extraCharge: 0,
-    image: "/pizza_product/PIE_CRISPY.png"
+    image: "/pizza_products_webp/PIE_CRISPY.webp"
   },
   {
     pizzaType: 'STUFFED-CRUST',
     crustTitle: 'Stuffed Crust Pizza',
     extraCharge: stuffedCrustAddedPrice,
-    image: "/pizza_product/PIE_STUFFEDCRUST.png"
+    image: "/pizza_products_webp/PIE_STUFFEDCRUST.webp"
   },
   {
     pizzaType: 'GOLDEN-CRUST',
     crustTitle: 'Golden Crust Pizza',
     extraCharge: goldenCrustAddedPrice,
-    image: "/pizza_product/PIE_GOLDENCRUST.png"
+    image: "/pizza_products_webp/PIE_GOLDENCRUST.webp"
   },
 ]
 
@@ -61,7 +61,7 @@ const largePizzaOptions = pizzaOptions.map(x => {
 // Crust items
 function PizzaChoiceItem(props) {
   return <div className={styles.groupItem} onClick={props.onClick}>
-    <img src={process.env.PUBLIC_URL + props.pizzas.image} alt={props.pizzas.crustTitle}></img>
+    <img src={require(`../../../../assets${props.pizzas.image}`).default} alt={props.pizzas.crustTitle}></img>
     <p>{props.pizzas.crustTitle}</p>
     <small>HKD {(props.mainItem.price + props.pizzas.extraCharge).toFixed(2)}</small>
   </div>
@@ -93,7 +93,7 @@ export default function PizzaChoicesModal(props) {
   return <Modal onClearModal={clearModalHandler}>
     <div className={styles.msg}>
       <div className={styles.left}>
-        <img src={props.mainItem.image} alt={props.mainItem.title}></img>
+        <img src={require(`../../../../assets${props.mainItem.image}`).default} alt={props.mainItem.title}></img>
       </div>
 
       <div className={styles.right}>

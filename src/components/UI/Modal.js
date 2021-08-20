@@ -22,7 +22,7 @@ export default function Modal(props) {
     props.onClearModal();
   }
 
-  return <Overlay onClick={clearModalHandler}>
+  return <Overlay onClick={clearModalHandler} >
     {props.children}
   </Overlay>
 }

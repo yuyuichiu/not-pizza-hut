@@ -29,12 +29,9 @@ const Cart = (props) => {
         cutlery: cutleryOption,
         specialRequest: userNotes.current.value
       }
-      console.log('Order Done:', cartOutput);
-  
-      // cartCtx.clearCart();
 
       props.onModalOpen({
-        id: 'RECEIPT',
+        id: 'CHECKOUT',
         cart: cartOutput,
       })
     }

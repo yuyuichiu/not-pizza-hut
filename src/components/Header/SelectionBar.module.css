@@ -2,7 +2,7 @@
   background-color: #fff;
   border: 1px solid #ccc;
   min-height: 70px;
-  width: calc(100vw - 420px + 98px);
+  width: calc(100% - 420px + 98px);
   box-shadow: -2px 2px 5px rgba(0,0,0,0.2);
   display: flex;
   flex-wrap: wrap;
@@ -12,7 +12,7 @@
 
 @media (max-width: 1140px) {
   .bar{
-    width: calc(100vw - 350px);
+    width: calc(100% - 350px);
     padding: 0 10px;
     justify-content: flex-start;
   }
@@ -23,7 +23,7 @@
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     z-index: 10;
   }

@@ -19,7 +19,6 @@ function App() {
   const [checkoutModal, setCheckoutModal] = useState(null);
 
   const modalOpenHandler = (item) => {
-    // To do: identify product type and open correct modal.
     if (item.id.startsWith('PIZZA')) { setPizzaModal(item) }
     else if (item.id.startsWith('COMBO')) { setComboModal(item) }
     else if (item.id.startsWith('BOX')) { setComboModal(item) }

@@ -21,7 +21,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 100%;
   width: 300px;
   padding: 20px 0;
   display: flex;

@@ -10,7 +10,7 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
   font-family: 'UnitedSans';
-  width: 100vw;
+  width: 100%;
   position: absolute;
 }
 

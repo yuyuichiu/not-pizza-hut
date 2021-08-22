@@ -1,6 +1,6 @@
 .header {
   background-color: #fff;
-  width: calc(100vw - 420px);
+  width: calc(100% - 420px);
   height: 70px;
   padding: 0 50px;
   padding-top: 20px;
@@ -32,13 +32,13 @@
 
 @media (max-width: 1140px) {
   .header{
-    width: calc(100vw - 350px);
+    width: calc(100% - 350px);
     padding: 10px;
   }
 
   .header img {
     position: absolute;
-    left:  calc((100vw - 350px) / 2);
+    left:  calc((100% - 350px) / 2);
     transform: translateX(-50%);
   }
 

@@ -11,6 +11,9 @@
 
 .intro {
   position: relative;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .intro h3 {
@@ -25,6 +28,7 @@
 
 .intro img {
   transform: scale(75%);
+  max-width: 100%;
 }
 
 .mealList {
@@ -54,7 +58,22 @@
   }
 
   .mealList{
-    width: 100vw;
+    width: 100%;
     padding: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .intro img {
+    visibility: hidden;
+  }
+
+  .intro h3 {
+    background-color: #fff;
+    padding: 6px 20px;
+    border-radius: 5px;
+    border: 2px dashed rgb(170, 15, 15);
+    width: 140px;
+    text-align: center;
   }
 }

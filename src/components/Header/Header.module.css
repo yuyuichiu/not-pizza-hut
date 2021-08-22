@@ -52,7 +52,7 @@
 
 @media (max-width: 770px) and (max-width: 1139px) {
   .header{
-    width: calc(100% - 5px);
+    width: calc(100% - 0px);
     padding: 5px;
   }
 
@@ -71,5 +71,11 @@
 
   .header small {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 769px) {
+  .header {
+    padding: 0px;
   }
 }

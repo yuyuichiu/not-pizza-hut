@@ -117,7 +117,7 @@
   }
 
   .mealItem.large {
-    flex: 0 1 98%;
+    flex: 0 1 100%;
   }
 }
 
@@ -127,6 +127,6 @@
   }
 
   .mealItem.large {
-    flex: 0 1 95%;
+    flex: 0 1 100%;
   }
 }

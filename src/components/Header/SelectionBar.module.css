@@ -13,7 +13,6 @@
 @media (max-width: 1140px) {
   .bar{
     width: calc(100% - 350px);
-    padding: 0 10px;
     justify-content: flex-start;
   }
 }
@@ -26,5 +25,12 @@
     width: 100%;
     justify-content: center;
     z-index: 10;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .bar {
+    padding: 0;
   }
 }

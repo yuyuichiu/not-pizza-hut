@@ -65,7 +65,7 @@ const Cart = (props) => {
       </>
     }
     
-    <Button className={styles.altBtn}>Coupon Code</Button>
+    {false && <Button className={styles.altBtn}>Coupon Code</Button>}
     <Button className={styles.btn} onClick={orderSubmitHandler} disabled={cartCtx.items.length === 0}>Checkout</Button>
   </div>
 }

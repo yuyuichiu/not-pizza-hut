@@ -29,7 +29,22 @@ This website has provided an option to fetch server data and print them on the c
 
 #### Responsive Design
 Layout of the website is responsive to different screen sizes. 
-<< Desktop, Tablet, Mobile >>
+
+<div>
+  <img src="https://upload.cc/i1/2021/08/22/bm0HnO.jpeg" width="150px" />
+  <img src="https://upload.cc/i1/2021/08/22/e0NGyS.png" height="300px" />
+</div>
 
 ## Logic behind the scene
-<< explain your code for important features here >>
+This website is built upon the React.js Library. It utilizes components to separate code blocks into reusable components and manages the app status with Hooks like props and state. I have used function & hooks instead of class components because the <a href="https://reactjs.org/docs/hooks-faq.html#should-i-use-hooks-classes-or-a-mix-of-both">React offical site recommands it.</a>
+
+Multiple advanced Hook concepts is applied onto this project. The cart state is managed with useReducer to handle complex logic, and deliverd with useContext & Provider to make it more assessible to other components without passing too much props (~Redux). The HTTP fetch and input validation is handled by custom written Hooks (useHttp in use-http.js & useInput in use-input.js) to make them reusable and convenient to use. 
+
+Module CSS is used to manage CSS of each component to ensure they do not accidentally collide with each other. The responive layout is made possible thanks to media query to adjust flex size and other various properties based on screen size.
+
+
+### Future plan on additions
+* Playing with actual Paypal payment
+* Option to choose pick up time and location instead of delivery only (Google map to display store locations)
+* Applying Coupon code
+* Put food menu on the server (I wrote the menu on client-side code and I am too lazy to rewrite them on the server :P)

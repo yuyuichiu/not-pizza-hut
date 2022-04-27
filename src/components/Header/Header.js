@@ -17,7 +17,7 @@ const Header = (props) => {
         console.log(error);
         return
       }
-      alert('Order Data has been printed on development tool console.');
+      alert('Order Data has been printed on the console. (Press F12 for developer tool, you will see it after you press confirm)');
       console.log('Order data (find ordered items on "items" key):',  Object.values(data));
     })
   }
